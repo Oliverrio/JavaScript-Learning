@@ -1,0 +1,297 @@
+Variables, cadenas de texto, strings, uso de comillas, punto y coma, errores, null, NaN, undefined, prompts, operadores de Asigancion y Aritméticos, Concatenación, operadores logicos y de Comparacion, camel case y condicionales.
+
+
+
+
+
+Variables son recipientes, eso puede cambiar
+
+String es una cadena de texto, se pueden escribir con '' , "" , ´´
+Number , son numeros, simplemente numero, sin comillas
+Booleano, son 0 y 1 o tambien true o false 
+
+Undefined
+Error o variable no definida
+
+3 formas de declarar una variable, var, let o const
+Funcionan en bloques:
+   var aplica para todo el documento 
+   let limita el alcance de la variable al bloque en el que la usamos (solo tiene efecto en una parte del codigo como por ejemplo dentro de un if o condicional)
+   const es una constante, la variable siempre va a ser la misma, no puede cambiar, no puede cambiar su valor, se podria usar como ejemplo para pi (3.1416) 
+
+Para declarar una variable es
+   let nombreVariable;
+Para inicializar 
+   nombreVariable = valorVariable;
+
+Si no esta inicializada es "undefined" (existe la variable declarada, pero no esta inicializada o no tiene un valor)
+
+const no se puede declarar y despues inicializar 
+   const nombreVariable = valorVariable;
+Forma de declarar y luego inicializar 
+   let nombreVariable; nombreVariable = valorVariable;
+
+Siempre usar " ; " al final de cada linea de código, el punto y coma separa 
+
+Multiples variables
+   let nombreVariable = valorVariable, nombreVaribale2 = valorVariable2, nombreVariable3 = valorVariable3;
+Otra forma:
+   let nombreVariable = valorVariable;
+   let nombreVariable2 = valorVariable2;
+   let nombreVariable3 = valorVariable3;
+
+Null: indica que una variable esta vacia a propósito, es diferente a undefined, ya tiene su valor, que es vacio, undefined es "temporalmente no tiene valor"
+
+NaN: aplica para operaciones, si tratamos de multiplicar o hacer operaciones matemáticas con un valor numerico y una linea de texto u otra cosa, nos salta NaN, que significa "Not a Number"
+
+Prompt: formato prompt(); crea un alert en l cual se interactua con el usuario para ingresar texto
+Para guardar un dato escrito ahi es: 
+   let nombreVariable = prompt("");
+Despues para mostrar esa entrada de usuario se puede usar un alert.
+   alert(nombreVariable);
+
+Operadores:
+Operadores de Asignación.
+   Asigna un valor al operando de la izquierda basado en el valor del operando de la derecha.
+  
+Nombres                                        Abreviaciones       Significado 
+ 
+Asignacion                                         x = y               x = y 
+Asignacion de adiccion                             x += y              x = x + y 
+Asigancion de sustraccion                          x -= y              x = x - y 
+Asignación de multiplicacón                        x *= y              x = x * y 
+Asignación de división                             x /= y              x = x / y 
+Asignación de Resto                                x %= y              x = x % y     Divide x % y, y el resto lo muestra con numero entero. Ejemplo 50 % 6 = 2 porque 6 x 8 = 48 y RESTAN 2 para el 50.
+Asignacion de exponenciacion                       x **= y             x = x ** y    Exponencia el numero x a la potencia y. Ejemplo x = 10, y = 2 Resultado 100 porque 10 elevando al cuadrado es 100.  
+
+Asignamiento avanzado
+
+Asignacion de desplazamiento a la izq              x <<= y             x = x << y 
+Asignacion de desplazamiento a la der              x >>= y             x = x >> y 
+Asignacion sin signo de desplazamiento a la der    x >>>= y            x = x >>> y 
+Asignacion AND                                     x &= y              x = x & y
+Asignacion XOR                                     x ^= y              x = x ^ y
+Asignacion OR                                      x |= y              x = x | y 
+
+
+Ejemplo:
+   let numero = 10;
+   numero += 5;
+Resultado mostrado seria 15, orra forma de hacerlo:
+   let numero = 10;
+   numero = numero + 5;
+
+Forma de mostrarlo en el documento 
+   document.write()
+
+
+
+Operadores Aritméticos.
+Toman valores numericos (ya sean literales o variables) como sus operandos y retornan un valor numerico unico.
+
+Addition (+)             Suma 2 numeros.
+Decrement (--)           Solo necesita un numero, ejemplo: numero1 = 10; numero1--; resultado = numero1; esto dejaria como resultado 9, porque se le resta " 1 " al numero de la variable.
+Division (/)             Divide dos numeros.
+Exponentiation (**)      Exponencia a cierta potencia, ejemplo: numero1 = 10; numero1**2; resultado = numero1; esto da como resultado 10 ya que lo subimos a la segunda potencia.
+Increment (++)           Requiere un solo numero de variable, aumenta uno a esa variable, ejemplo: numero1 = 10; numero1++; resultado numero1; deja como resultado 11.
+Multiplication (*)
+Remaninder (%)
+Subtraction (-)
+Unary negation (-)       Pasaa negativo el numero de la variable 
+Unary plus (+)
+
+Ejemplo addition:
+   numero1 = 10;
+   numero2 = 5;
+   resultado = numero1 + numero2;
+   alert(resultado)                15
+
+
+Concatenación:
+Unir strings
+   saludo = "¡Hola pedro!";
+   pregunta = "¿Como estas?";
+       
+   frase = saludo + pregunta;
+       
+   document.write(frase);
+
+El resultado mostraria en el documento la frase ¡Hola pedro!¿Como estas?
+
+
+Si queremos concatenar numeros hariamos esto:
+   numero1 = 5;
+   numero2 = 8;
+       
+   frase = numero1 + numero2;
+       
+   document.write(frase);
+
+El resultado mostraria en el documento el numero 13 y esto no nos sirve, la forma correcta seria:
+
+   numero1 = 5;
+   numero2 = 8;
+       
+   frase = "" + numero1 + numero2;
+       
+   document.write(frase);
+
+El resultado mostraria en el documento el numero 58 ya que las comillas "" convierten todo en texto
+
+Esto se puede hcaer con "concat" que es una funcion, esto solo es para los strings
+
+   numero1 = "5";
+   numero2 = 8;
+       
+   frase = numero1.concat(numero2);
+       
+   document.write(frase);
+
+El resultado mostraria en el documento el numero 58, para usarlo, si o si necesitamos un string, en este caso es el numero 5 como string por usar las comillas ""
+
+La forma recomendada de concatenar es con ${}
+Ejemplo:
+
+   nombre = "Oliver";
+       
+   frase = "soy" + nombre + " y estoy programando";
+       
+   document.write(frase);
+
+Esto nos daria como resultado la frase bien estructurada, pero existe la mejor forma con ${} y se usan las backticks en vez de las comillas, con alt 96 o en mi caso CTRL + alt + }
+
+   nombre = "Oliver";
+       
+   frase = `soy ${nombre} y estoy programando`;
+       
+   document.write(frase);
+
+Esto nos daria como resultado la frase igualmente bien estructurada, nos ahorramos tiempo y al usar las backticks `` podemos hacer saltos de linea dentro de nuestro codigo y nos ayuda a podes escribir codigo html, ya que si usamos comillas simples '' ´´ o comillas dobles "" no podemos hacer eso y saltan errores.
+
+Si queremos usar dentro del string unas comillas dobles tenemos que hacer el string con comillas simples para dentro del string poder usarlas y evitar que se cierre la cadena de texto.
+Si queremos usar dentro del string unas comillas simples tenemos que hacer el string con comillas dobles para dentro del string poder usarlas y evitar que se cierre la cadena de texto.
+
+Operadores
+    Operadores Logicos 
+    Operadores de Comparacion 
+
+Operadores de Comparacion:
+Comparan 2 expresiones y devuelven una valor boolean que representa la relacion de sus valores. true o false. 
+
+    let numero = 23;
+    let numero2 = 13;
+
+    document.write(numero == numero2) 
+
+Esto nos mostraria en el documento la palabra "false" ya que 23 no es igual que 13, si en cambio numero2 = 23; en el documento nos mostraria la palabra "true".
+
+Con == preguntamos si son iguales los valores.
+Con != preguntamos si los valores son distintos y nos dejaria el true o false respectivamente.
+Con === compara que sean estrictamente iguales, que sea lo mismo y en el mismo tipo de dato, si una variable es numero y la otra es texto como por ejemplo 23 y "23" funcionaria el == y nos daria como rsultado true, en cambio con === el resultado seria false ya que uno es exto y otro es numero, tienen que ser estrictamente iguales, los dos numeros o los dos texto.
+Con !== compara que no sean estrictamente iguales, no es esrrictamente el mismo tipo de dato.
+Con >= verificamos si un numero es mayor o igual que el numero 2. Estos se pueden usar solos >.
+Con <= verificamos si un numero es menor o igual que el numero 2. Estos se pueden utilizar solos <.
+
+Operadores Logicos:
+Nos devuelvenun resultado a partir de que se cumpla (o no) una condicion, su resultadoes booleano, y sus operandos son valores logicos o asimilables a ellos.
+
+    let valor1 = true;
+    let valor2 = true; 
+
+    let resultado = valor && valor2;
+
+    let resultado2 = valor || valor2;
+
+    let resultado3 = !valor;
+
+    document.write()
+
+Lo que hace && (AND) es que si las dos condiciones se cumplen muestra true si true es true nos da true, si una es falsa y una true nos da false, solo acepta datos booleanos.
+Ejemplo:
+    num1 = 12;
+    num2 = 24;
+
+    afirmacion1 = num1 < num2; // Esto es verdadero ya que 12 es menor que 24
+    afirmacion2 = num1 != num2; // Esto es verdadero ya que 12 es diferente a 24 
+
+    document.write(afirmacion1 && afirmacion2)
+
+Esto nos mostraria como resultado true, si cualquiera de las 2 o las 2 son falsas mostraria un false.
+
+Lo que hace || (OR) es que si cualquiera de las 2 es verdadera todo es verdadero, si las 2 son falsas te devuelve un false.
+Ejemplo:
+    num1 = 12;
+    num2 = 24;
+
+    afirmacion1 = num1 > num2; // Esto es falso ya que 12 no es mayor que 24
+    afirmacion2 = num1 != num2; // Esto es verdadero ya que 12 es diferente a 24 
+
+    document.write(afirmacion1 || afirmacion2)
+
+Esto nos mostraria un true, porque uno de los 2 es verdadero, si los dos fueran falsos devolveria un false.
+
+Lo que hace ! (Not) es regresar lo contrario de lo que le devuelvo
+Ejemplo:
+    num1 = 12;
+    num2 = 24;
+
+    afirmacion1 = num1 < num2; // Esto es verdadero ya que 12 es menor que 24
+    afirmacion2 = num1 != num2; // Esto es verdadero ya que 12 es diferente a 24 
+
+    document.write(!afirmacion1)
+
+Si afirmacion1 es verdadera, regresamelo falso, te devuelve lo contrario, solo funciona con valores logicos.
+
+
+Ejercicio: (esto funciona igual que las matematicas, primero se resuelven los parentesis).
+
+    num1 = 12;
+    num2 = 24;
+    num3 = 25;
+    num4 = 92;
+    num5 = 91;
+
+    operacion = (num5 > num2 && num4 < num3) || (!(num1 === num2) || num3 != num3)
+                ( 91  >  24  &&  92  <  25 ) || (!( 12  ===  24 ) ||  25  !=  25 )
+                (    true    &&     false  ) || (!(    false    ) ||    false    )
+                            false            ||        true       ||    false    
+                            false            ||        true
+                                            true
+    document.write(operacion)
+
+Esto mostraria en el documento la palabra "true" ya que al realizar toda la operacion podemos confirmar que todo nos da como resultado un true.
+
+
+Camel Case 
+
+    palabra1Palabra2
+    dimeAlgoPorFavor
+Esta es la forma en la que trabaja javascript, las palabras se distinguen con mayusculas y minusculas en las variables, la primera con minuscula y las siguientes palabras van con la primer letra en mayuscula y lo demas en minuscula.
+    nombreDeMiVariable
+
+
+Condicionales:
+Es una sentencia que nos permite validar algo, ejecuta un bucle o bloque que se define con {} y esto se ejecuta si una condicion se cumple.
+    let nombre = Oliver
+
+    if (nombre == "Oliver") {
+        alert(`Tu nombre es ${nombre}`);
+    }
+
+En este caso no se ejecuta el alert porque 10 no es mayor que 15, como no se cumple esa condicion, no se ejecuta lo que esta dentro del bloque.
+
+Si es falsa la condicion se utiliza "else if", estos se pueden utilizar infinitamente.
+
+    else if (nombre == "Benavides") {
+        alert(`Tu nombre es ${nombre}`);
+    }
+    else if (nombre == "Jaidar") {
+        alert(`Tu nombre es ${nombre}`)
+    }
+
+Si nada de lo anterior se cumple se usa else.
+
+    else {
+        alert("No se cual es tu nombre");
+    }
+
